@@ -1,6 +1,8 @@
 "use strict";
 console.log("Hello from searchNewMovie");
 
+let $ = require("jquery");
+
 //user types in movie name
 //user presses the Enter key
 // $(":input").keypress(function(event) {
@@ -17,13 +19,17 @@ console.log("userMovieInput", userMovieInput);
 //the input variable is used in an invoked function call
 //the results from the invoked function are stored in a movie db variable
 function apiCall(movie) {
-	$.getJSON('https://api.themoviedb.org/3/search/movie?query=' + encodeURI(movie) + 
-			'&api_key=1425d42c47a975ca77e4f3f66bcb94d2&include_adult=false');
-		// .then(function(response));
+	console.log("movie", movie);
+	$.ajax('https://api.themoviedb.org/3/search/movie?query=' + movie + 
+			'&api_key=1425d42c47a975ca77e4f3f66bcb94d2&include_adult=false')
+	.then(function(response));
 	// console.log("Response from api", response);
-	// var variable = response
 }
-// (function() {
+
+//invoke the function
+apiCall(userMovieInput);
+
+// function() {
 //   var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 //   $.getJSON( flickerAPI, {
 //     tags: "mount rainier",
@@ -38,10 +44,9 @@ function apiCall(movie) {
 //         }
 //       });
 //     });
-// })();
+// };
 
-//invoke the function
-apiCall(userMovieInput);
+
 
 //the movie name, the poster, year released, the actors, and the "add to watchlist" link are displayed
 //https://api.themoviedb.org/3/search/movie?query=star+wars&api_key=1425d42c47a975ca77e4f3f66bcb94d2&include_adult=false
@@ -54,4 +59,4 @@ apiCall(userMovieInput);
 
 
 //export variables to other js files
-// module.exports = {variable};
+module.exports = {apiCall};
