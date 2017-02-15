@@ -1,8 +1,35 @@
+
+//**************************
+//Font and Color Variabales
+//**************************
+$primary-color: #455a64;
+$secondary-color: #b2dfdb;
+$body-font:'Limelight', cursive;
+$headline-font:'Nickelodeon', cursive;
+
+
+
+
+body{
+	background-color:$primary-color;
+}
+label{
+	color: #000;
+}
+button{
+	font-family:$body-font;
+}
+a{
+	font-family:$body-font;
+}
 #search-form {
 	padding: 0;
+	background-color:$secondary-color;
 }
 h2 {
 	display: inline;
+	color: #fff;
+	font-family:$headline-font;
 }
 img{
 	height: 20em;
@@ -16,3 +43,11 @@ img{
 .more-info{
 	margin-right: 0;
 }
+#card-div{
+	width: 80%;
+	margin-left: 10%;
+}
+
+
+
+

@@ -3,10 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Movie History</title>
 	<link rel="stylesheet" href="dist/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
           <label for="title-search">Search</label>
         </div>
         <div class="col s6">
-          <button id="auth-button" type="button" class="btn waves-effect waves-light right valign" data-target="modal-login">Login/Register</button>
+          <button id="auth-modal" type="button" class="btn waves-effect waves-light right valign" data-target="modal-login">Login/Register</button>
         </div>
       </div>
     </form>
@@ -66,10 +67,10 @@
              </div>
            </div>
         </form>
-      </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Login</a>
+        <a href="#!" id="auth-button" class="modal-action modal-close waves-effect waves-green btn-flat">Login</a>
       </div>
   </div>
 

@@ -1,16 +1,25 @@
 "use strict";
 
+//*******************
+// Initialize Modals
+//*******************
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+
 
 //*******************
 // Require Variables
 //*******************
-let 	Tmdb = require('./searchTMDB.js');
+let Tmdb = require('./searchTMDB.js');
+let Print = require('./print.js');
+let Events = require('./events.js');
 
 
 ///////////////////////////////////////////////
 /////////// EVENT LISTENERS ///////////////////
 ///////////////////////////////////////////////
-console.log("We're listening!");
+
 
 /////////// USER SIGN-IN BUTTON ///////////////
 $("#auth-button").click(function() {
@@ -21,6 +30,7 @@ $("#auth-button").click(function() {
 
 /////////// SEARCH BAR //////////////////
 
+
 //TMDb Search Button
 //check for Enter press, and if so we pass the search string to
 //the API. When it returns, we perform a second search for the poster
@@ -30,12 +40,11 @@ $("#title-search").on("keyup", (event) => {
 	{
 		console.log('13');
 		Tmdb.searchTMDB().then(function(data){
-			console.log(data);
+			$("#title-search").val("");
+			Print.tmdbClear();
+			Print.tmdbPrint(data);
+			Events.addCardListeners();
 		});
-		// .then(
-	 // 		Tmdb.getPosters()
-		// );
-	// 	.then( Tmdb.fillCards());
 	}
 });
 
