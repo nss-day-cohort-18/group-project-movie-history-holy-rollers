@@ -1,6 +1,7 @@
 "use strict";
 
-// let $ = require('jquery');
+let db = require("./getFirebase.js"),
+	cards = require("./makeCards.js");
 
 ///////////////////////////////////////////////
 /////////// EVENT LISTENERS ///////////////////
@@ -35,16 +36,20 @@ $("#search").keydown(function(tomato){
 /////////// FILTER EVENT LISTENERS ////////////
 $("#showUntrackedBtn").click(function (){
 	console.log("showUntrackedBtn",this);
+	$("#breadCrumbs").text("Holy Rollers' Movie History > Untracked");
 });
 
 $("#showUnwatchedBtn").click(function (){
 	console.log("showUnwatchedBtn",this);
+	$("#breadCrumbs").text("Holy Rollers' Movie History > Unwatched");
 });
 
 $("#showWatchedBtn").click(function (){
 	console.log("showWatchedBtn",this);
+	$("#breadCrumbs").text("Holy Rollers' Movie History > Watched");
 });
 
 $("#favoritesBtn").click(function (){
 	console.log("favoritesBtn",this);
+	$("#breadCrumbs").text("Holy Rollers' Movie History > Favorites");
 });
