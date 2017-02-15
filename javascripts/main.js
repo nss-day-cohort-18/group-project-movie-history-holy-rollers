@@ -38,7 +38,6 @@ $("#auth-button").click(function() {
 $("#title-search").on("keyup", (event) => {
 	if(event.which === 13)
 	{
-		console.log('13');
 		Tmdb.searchTMDB().then(function(data){
 			$("#title-search").val("");
 			Print.tmdbClear();

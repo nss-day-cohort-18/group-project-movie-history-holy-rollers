@@ -38,8 +38,8 @@ Tmdb.searchTMDB = function(){
 };
 
 Tmdb.findTMDB = function(){
-	// let id = event.target.val();
-	console.log("it works");
+	let id = event.currentTarget;
+	console.log("it works", id);
 };
 
 
