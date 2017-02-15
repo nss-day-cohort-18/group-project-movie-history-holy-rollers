@@ -1,5 +1,7 @@
 "use strict";
-console.log("Hello from searchNewMovie");
+
+
+console.log("Search Loaded");
 
 //user types in movie name
 //user presses the Enter key

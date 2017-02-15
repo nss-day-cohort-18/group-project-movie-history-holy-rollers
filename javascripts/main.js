@@ -5,11 +5,11 @@
 ///////////////////////////////////////////////
 /////////// EVENT LISTENERS ///////////////////
 ///////////////////////////////////////////////
-console.log("We're listening!");
+console.log("Main Loaded");
 
 /////////// USER SIGN-IN BUTTON ///////////////
 $("#signIn").click(function() {
-	console.log("sign in user");
+	console.log("Sign in User");
 });
 
 $("#signOut").click(function(){
@@ -19,7 +19,7 @@ $("#signOut").click(function(){
 /////////// SEARCH BAR //////////////////
 
 $("#search").keydown(function(tomato){
-	console.log("i'm a button!");
+	console.log("search button!");
 	if(tomato.keyCode === 13) {
 		console.log("press enter to search");
 		let search = $("#search").val();
