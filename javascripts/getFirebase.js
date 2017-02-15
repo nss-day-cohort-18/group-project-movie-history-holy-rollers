@@ -7,5 +7,5 @@ function getKey() {
     databaseURL: "https://netflixorchill-ea086.firebaseio.com"
   };
 }
-console.log("getKey", getKey);
+
 module.exports = getKey;
