@@ -5,61 +5,86 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Movie History</title>
-	<link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="dist/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-
-<div class="container">
-  <div id="pageWrapper">
-    </div>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!--          <div class="nav navbar-nav navbar-left">
-          </div>
- --></div>
-        <form class="navbar-form navbar-left">
-          <div class="form-group">
-            <i class="glyphicon glyphicon-search"></i>
-            <input id="search" type="text" class="form-control" placeholder="Search" size="100">
-          </div>
-        </form>
-        <div>
+  <div class="row">
+    <form class="col s10 offset-s1">
+      <div class="row valign-wrapper card-panel hoverable" id="search-form">
+      <!-- Search bar -->
+        <div class="input-field col s6">
+          <input id="title-search" type="text">
+          <label for="title-search">Search</label>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#" class="btn" id="signIn"><img src="images/btn_google_signin_light_disabled_web@2x.png" alt="google sign in button" height="30px"></a></li>
-          <li><a href="#" class="hide" id="signOut">Sign Out</a></li>
-        </ul>
+        <div class="col s6">
+          <button id="auth-button" type="button" class="btn waves-effect waves-light right valign" data-target="modal-login">Login/Register</button>
+        </div>
       </div>
-      <!-- /.container-fluid -->
-    </nav>
-    <div>
-      <h1 id='breadCrumbs'>Holy Roller's Movie History ></h1>
-      <h1 id='text'></h1>
+    </form>
+  </div>
+  <!-- Filters -->
+  <div class="row">
+    <div class="col s10 offset-s1">
+      <h2>Movie History > </h2><h2 id="search-header" class="hide">Search Results</h2><h2 id="unwatched-header" class="hide">Unwatched</h2><h2 id="watched-header" class="hide">Watched</h2>
     </div>
-    <div id='viewTracker' class="btn-group btn-group-justified">
-      <a id="showUntrackedBtn" href="#" class="btn btn-primary">Show Untracked</a>
-      <a id="showUnwatchedBtn" href="#" class="btn btn-primary">Show Unwatched</a>
-      <a id="showWatchedBtn" href="#" class="btn btn-primary">Show Watched</a>
-      <a id="favoritesBtn" href="#" class="btn btn-primary">Favorites</a>
+  </div>
+  <form action="#" class="row">
+    <p class="range-field col s4 offset-s2">
+      <label for="rating-filter">Filter by Rating</label>
+      <input type="range" id="rating-filter" min="0" max="10" />
+    </p>
+  </form>
+        
+  <div class="row">
+    <div class="col s10 offset-s1">
+      <a class="waves-effect waves-light btn">Show Untracked</a>
+      <a class="waves-effect waves-light btn">Show unwatched</a>
+      <a class="waves-effect waves-light btn">Show Watched</a>
     </div>
-    <div class="container" id="movieOutput"></div>
+  </div>
+
+  <!-- Here is where we define all of our modals. -->
+  <div>
+
+    <!-- Login user modal -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+        <h4>Login Here:</h4>
+        <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate">
+              <label for="email" data-error="wrong" data-success="right">Email</label>
+            </div>
+          </div>
+           <div class="row">
+             <div class="input-field col s12">
+               <input id="password" type="password" class="validate">
+               <label for="password">Password</label>
+             </div>
+           </div>
+        </form>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Login</a>
+      </div>
+  </div>
+
+      <!-- Print Cards Below -->
+
+
+  <div id="card-div" class="row">
+    
   </div>
 
 
-
-
-	<script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="lib/node_modules/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
-	<script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="dist/jquery.min.js"></script>
+  <script src="dist/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
 	<script type="text/javascript" src="dist/app.js"></script>
 </body>
 </html>
