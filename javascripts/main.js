@@ -1,27 +1,47 @@
 "use strict";
 
 
+
+//*******************
+// Require Variables
+//*******************
+let 	Tmdb = require('./searchTMDB.js');
+
+
+
 ///////////////////////////////////////////////
 /////////// EVENT LISTENERS ///////////////////
 ///////////////////////////////////////////////
 
 
 /////////// USER SIGN-IN BUTTON ///////////////
-$("#signIn").click(function() {
+$("#auth-button").click(function() {
 	console.log("sign in user");
 });
 
-$("#signOut").click(function(){
-	location.reload();
-});
+
 
 /////////// SEARCH BAR //////////////////
 
-$("#title-search").keydown(function(tomato){
-	if(tomato.keyCode === 13) {
-		let search = $("#title-search").val();
+
+//TMDb Search Button
+//check for Enter press, and if so we pass the search string to
+//the API. When it returns, we perform a second search for the poster
+//and the user data, which influences how we display the search results
+$("#title-search").on("keyup", (event) => {
+	if(event.which === 13)
+	{
+		console.log('13');
+		Tmdb.searchTMDB().then(function(data){
+			console.log(data);
+		});
+		// .then(
+	 // 		Tmdb.getPosters()
+		// );
+	// 	.then( Tmdb.fillCards());
 	}
 });
+
 
 
 
