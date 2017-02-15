@@ -1,13 +1,4 @@
 "use strict";
-console.log("Hello from searchNewMovie");
-
-//user types in movie name
-//user presses the Enter key
-// $(":input").keypress(function(event) {
-// 	 if (event.which == 13) {
-// 	    event.preventDefault();
-// 	 }
-// });
 
 //the input is stored in a variable
 // var userMovieInput = $(":input").attr('type').val();

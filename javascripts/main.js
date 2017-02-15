@@ -1,14 +1,10 @@
 "use strict";
 
-//this is a change
-//
-//
-// let $ = require('jquery');
 
 ///////////////////////////////////////////////
 /////////// EVENT LISTENERS ///////////////////
 ///////////////////////////////////////////////
-console.log("We're listening!");
+
 
 /////////// USER SIGN-IN BUTTON ///////////////
 $("#signIn").click(function() {
@@ -21,12 +17,9 @@ $("#signOut").click(function(){
 
 /////////// SEARCH BAR //////////////////
 
-$("#search").keydown(function(tomato){
-	console.log("i'm a button!");
+$("#title-search").keydown(function(tomato){
 	if(tomato.keyCode === 13) {
-		console.log("press enter to search");
-		let search = $("#search").val();
-		console.log("search", search);
+		let search = $("#title-search").val();
 	}
 });
 

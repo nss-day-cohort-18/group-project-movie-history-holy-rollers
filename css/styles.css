@@ -1,8 +1,23 @@
+body {
+  background-color: #455a64; }
+
+label {
+  color: #000; }
+
+button {
+  font-family: "Limelight", cursive; }
+
+a {
+  font-family: "Limelight", cursive; }
+
 #search-form {
-  padding: 0; }
+  padding: 0;
+  background-color: #b2dfdb; }
 
 h2 {
-  display: inline; }
+  display: inline;
+  color: #fff;
+  font-family: "Nickelodeon", cursive; }
 
 img {
   height: 20em; }
