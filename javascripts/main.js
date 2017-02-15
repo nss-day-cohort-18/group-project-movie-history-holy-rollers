@@ -11,7 +11,7 @@
 console.log("Main Loaded");
 
 /////////// USER SIGN-IN BUTTON ///////////////
-$("#signIn").click(function() {
+$("#auth-button").click(function(event) {
 	console.log("Sign in User");
 });
 
@@ -31,10 +31,6 @@ $("#search").keydown(function(tomato){
 });
 
 
-
-
-
-
 /////////// FILTER EVENT LISTENERS ////////////
 $("#showUntrackedBtn").click(function (){
 	console.log("showUntrackedBtn",this);
@@ -51,3 +47,5 @@ $("#showWatchedBtn").click(function (){
 $("#favoritesBtn").click(function (){
 	console.log("favoritesBtn",this);
 });
+
+//
