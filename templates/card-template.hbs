@@ -1,5 +1,5 @@
 {{#each results}}
-  <div value="{{id}}" class="col s4 card-fixed">
+  <div id="{{id}}" class="col s4 card-fixed">
 	<div class="card hoverable">
 	  <div class="card-image waves-effect waves-block waves-light">
 	    <img class="activator" src="https://image.tmdb.org/t/p/w500{{poster_path}}">
@@ -13,7 +13,7 @@
 		<p>Year: {{release_date}}</p>
 		<br>
 		<p>Plot:  {{overview}}</p>
-		<article id="actor-reveal"></article>
+		<article id="actor-reveal-{{id}}"></article>
 	  </div>
 	</div>
 	<button type="button" class="btn waves-effect waves-teal add-movie">Add to Watch List</button>

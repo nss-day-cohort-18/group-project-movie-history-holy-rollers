@@ -11,10 +11,27 @@
 //*******************
 // Require Variables
 //*******************
+let Handlebars = require('hbsfy/runtime');
 let Tmdb = require('./searchTMDB.js');
 let Print = require('./print.js');
 let Events = require('./events.js');
 let user = require("./user");
+
+
+
+//////////////////////
+//Handlebars Helper
+//////////////////////
+
+Handlebars.registerHelper("shorten", function(array){
+	let shortArray = [];
+	for (var i = 0; i < 5; i++) {
+		shortArray.push(array[i]);
+	}
+});
+
+
+
 
 
 ///////////////////////////////////////////////
@@ -43,7 +60,6 @@ user.setUser(result.user.uid);
 $("#title-search").on("keyup", (event) => {
 	if(event.which === 13)
 	{
-		console.log('13');
 		Tmdb.searchTMDB().then(function(data){
 			$("#title-search").val("");
 			Print.tmdbClear();
