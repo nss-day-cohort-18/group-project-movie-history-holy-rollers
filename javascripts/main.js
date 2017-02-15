@@ -14,6 +14,7 @@
 let Tmdb = require('./searchTMDB.js');
 let Print = require('./print.js');
 let Events = require('./events.js');
+let user = require("./user");
 
 
 ///////////////////////////////////////////////
@@ -24,6 +25,11 @@ let Events = require('./events.js');
 /////////// USER SIGN-IN BUTTON ///////////////
 $("#auth-button").click(function() {
 	console.log("sign in user");
+user.logInGoogle()
+.then(function(result){
+	console.log("login result", result.user.uid);
+user.setUser(result.user.uid);
+});
 });
 
 
