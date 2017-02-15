@@ -5,9 +5,8 @@
 //Tmdb API namespace initialization
 //***********************************
 let 	key = 'ef211d0a57225ce857a7822b3a8ed69f',
-	   data = {},
- posterURLs = [],
-	   Tmdb = {key, data, posterURLs};
+	   Tmdb = {};
+
 
 //*********
 //Functions
@@ -38,20 +37,10 @@ Tmdb.searchTMDB = function(){
 	});
 };
 
-//In getPosters() we apply the data results to the global Tmdb object
-//and set the image url paths. 'this.result' is an object, while
-//'this.posterURLs' is an array.
-// Tmdb.getPosters = function(data)
-// {
-// 	console.log(data);
-// 	this.data = data;
-// 	for(var i = 0; i < this.result.length; i++)
-// 	{
-// 		this.posterURLs[i] = this.imagePrefix + this.result[i];
-// 	}
-// 	console.log(this.posterURLs);
-// };
-
+Tmdb.findTMDB = function(){
+	// let id = event.target.val();
+	console.log("it works");
+};
 
 
 
