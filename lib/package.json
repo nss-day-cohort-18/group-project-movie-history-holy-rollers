@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "css": "^2.2.1",
+    "firebase": "^3.6.9",
     "handlebars": "^4.0.6",
     "hbsfy": "^2.7.0",
     "materialize-css": "^0.98.0"
