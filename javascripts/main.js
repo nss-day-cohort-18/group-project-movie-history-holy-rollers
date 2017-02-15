@@ -1,34 +1,56 @@
 "use strict";
 
-//this is a change
-//
-//
-// let $ = require('jquery');
+//*******************
+// Initialize Modals
+//*******************
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+
+//*******************
+// Require Variables
+//*******************
+let Tmdb = require('./searchTMDB.js');
+let Print = require('./print.js');
+let Events = require('./events.js');
+
 
 ///////////////////////////////////////////////
 /////////// EVENT LISTENERS ///////////////////
 ///////////////////////////////////////////////
-console.log("Main Loaded");
+
 
 /////////// USER SIGN-IN BUTTON ///////////////
-$("#auth-button").click(function(event) {
-	console.log("Sign in User");
+$("#auth-button").click(function() {
+	console.log("sign in user");
 });
 
-$("#signOut").click(function(){
-	location.reload();
-});
+
 
 /////////// SEARCH BAR //////////////////
 
-$("#search").keydown(function(tomato){
-	console.log("search button!");
-	if(tomato.keyCode === 13) {
-		console.log("press enter to search");
-		let search = $("#search").val();
-		console.log("search", search);
+//TMDb Search Button
+//check for Enter press, and if so we pass the search string to
+//the API. When it returns, we perform a second search for the poster
+//and the user data, which influences how we display the search results
+$("#title-search").on("keyup", (event) => {
+	if(event.which === 13)
+	{
+		console.log('13');
+		Tmdb.searchTMDB().then(function(data){
+			$("#title-search").val("");
+			Print.tmdbClear();
+			Print.tmdbPrint(data);
+			Events.addCardListeners();
+		});
 	}
 });
+
+
+
+
+
 
 
 /////////// FILTER EVENT LISTENERS ////////////
