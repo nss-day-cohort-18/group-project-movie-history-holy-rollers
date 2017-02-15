@@ -30,7 +30,6 @@ $("#auth-button").click(function() {
 
 /////////// SEARCH BAR //////////////////
 
-
 //TMDb Search Button
 //check for Enter press, and if so we pass the search string to
 //the API. When it returns, we perform a second search for the poster
@@ -70,3 +69,5 @@ $("#showWatchedBtn").click(function (){
 $("#favoritesBtn").click(function (){
 	console.log("favoritesBtn",this);
 });
+
+//
