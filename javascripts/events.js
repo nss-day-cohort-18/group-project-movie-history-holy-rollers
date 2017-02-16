@@ -2,7 +2,7 @@
 
 let Tmdb = require('./searchTMDB.js');
 let Print = require('./print.js');
-let fbData = require('./fbData.js');
+let fbData = require('./firebase/fbData.js');
 
 
 function addCardListeners(){

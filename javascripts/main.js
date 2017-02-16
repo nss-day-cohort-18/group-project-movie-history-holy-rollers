@@ -15,9 +15,9 @@ let Handlebars = require('hbsfy/runtime');
 let Tmdb = require('./searchTMDB.js');
 let Print = require('./print.js');
 let Events = require('./events.js');
-let user = require("./user");
+let user = require("./firebase/user.js");
 let crossCheck = require("./crossCheckData.js");
-let fbData = require('./now/fbData.js');
+let fbData = require('./firebase/fbData.js');
 
 
 
@@ -81,9 +81,8 @@ $("#title-search").on("keyup", (event) => {
 			//begin firebase user stuff
 			let currentUser = user.getUser();
 			fbData.getUserData(currentUser)
-			.then( (data) => {
-				Print.tmdbPrint(data);
-			});
+			.then( Print.tmdbPrint );
+
 			// crossCheck(currentUser);
 
 		});
