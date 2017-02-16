@@ -16,6 +16,8 @@ let Tmdb = require('./searchTMDB.js');
 let Print = require('./print.js');
 let Events = require('./events.js');
 let user = require("./user");
+let crossCheck = require("./crossCheckData.js");
+let searchFB = require('./searchFirebase');
 
 
 
@@ -75,6 +77,13 @@ $("#title-search").on("keyup", (event) => {
 			Print.tmdbPrint(data);
 			Events.addCardListeners();
 			Events.addButtonListeners();
+			let currentUser = user.getUser();
+			searchFB.getUserData(currentUser)
+			.then( (data) => {
+				Print.tmdbPrint(data);
+			});
+			// crossCheck(currentUser);
+
 		});
 	}
 });
