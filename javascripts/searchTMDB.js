@@ -38,8 +38,20 @@ Tmdb.searchTMDB = function(){
 };
 
 Tmdb.findTMDB = function(){
-	// let id = event.target.val();
-	console.log("it works");
+	let target = event.currentTarget;
+	let targetID = target.id;
+	$(target).addClass("loaded");
+	return new Promise( (resolve, reject) => {
+		$.ajax({
+			method: 'GET',
+			url: `https://api.themoviedb.org/3/movie/${targetID}/credits?api_key=${key}`
+		}).done( (data) => {
+			var tempObj = {data, targetID};
+			resolve(tempObj);
+			console.log(tempObj);
+		});
+	});
+	
 };
 
 
