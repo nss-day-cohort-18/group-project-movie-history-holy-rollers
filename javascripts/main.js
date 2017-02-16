@@ -25,12 +25,21 @@ let user = require("./user");
 
 Handlebars.registerHelper("shorten", function(array){
 	let shortArray = [];
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < 4; i++) {
 		shortArray.push(array[i]);
 	}
+	return shortArray;
 });
 
-
+Handlebars.registerHelper("shorten-date", function(data){
+	let date = data.split("");
+	let shortArray = [];
+	for (var i = 0; i < 4; i++) {
+		shortArray.push(date[i]);
+	}
+	let newDate = shortArray.join("");
+	return newDate;
+});
 
 
 
