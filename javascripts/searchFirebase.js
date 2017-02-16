@@ -1,8 +1,7 @@
 "use strict";
 
 var fbSearch = {};
-
-fbSearch.getUserData = function (tmdbData)
+fbSearch.getUserData = function (userID)
 {
 	return new Promise(
 	function(resolve, reject)
@@ -10,14 +9,13 @@ fbSearch.getUserData = function (tmdbData)
 		$.ajax(
 		{
 			method: 'GET',
-			url: "https://netflixorchill-ea086.firebaseio.com"
+			url: `https://netflixorchill-ea086.firebaseio.com/results.json?orderBy="uid"&equalTo="${userID}"`
 		})
 		.done( (userData) => {
-				dataObj.user = userData;
-				console.log('2',dataObj);
-				resolve(dataObj);
-			}
-		);
+
+				console.log('firebase request:',userData);
+				resolve(userData);
+		});
 	});
 };
 
