@@ -17,7 +17,7 @@ let Print = require('./print.js');
 let Events = require('./events.js');
 let user = require("./user");
 let crossCheck = require("./crossCheckData.js");
-let searchFB = require('./searchFirebase');
+let fbData = require('./fbData');
 
 
 
@@ -77,8 +77,10 @@ $("#title-search").on("keyup", (event) => {
 			Print.tmdbPrint(data);
 			Events.addCardListeners();
 			Events.addButtonListeners();
+
+			//begin firebase user stuff
 			let currentUser = user.getUser();
-			searchFB.getUserData(currentUser)
+			fbData.getUserData(currentUser)
 			.then( (data) => {
 				Print.tmdbPrint(data);
 			});
