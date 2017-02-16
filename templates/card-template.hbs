@@ -1,6 +1,6 @@
 {{#each results}}
-  <div id="{{id}}" class="col s4 card-fixed">
-	<div class="card hoverable">
+  <div class="col s4 card-fixed">
+	<div id="{{id}}" class="card hoverable">
 	  <div class="card-image waves-effect waves-block waves-light">
 	    <img class="activator" src="https://image.tmdb.org/t/p/w500{{poster_path}}">
 	  </div>
@@ -16,6 +16,6 @@
 		<article id="actor-reveal-{{id}}"></article>
 	  </div>
 	</div>
-	<button type="button" class="btn waves-effect waves-teal add-movie">Add to Watch List</button>
+	<button movieid="{{id}}" poster="{{poster_path}}" title="{{title}}" date="{{release_date}}" plot="{{overview}}" type="button" class="btn waves-effect waves-teal add-movie">Add to Watch List</button>
   </div>
 {{/each}}
