@@ -74,6 +74,7 @@ $("#title-search").on("keyup", (event) => {
 			Print.tmdbClear();
 			Print.tmdbPrint(data);
 			Events.addCardListeners();
+			Events.addButtonListeners();
 		});
 	}
 });

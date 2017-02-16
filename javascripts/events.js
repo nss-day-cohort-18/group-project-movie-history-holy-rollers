@@ -2,10 +2,11 @@
 
 let Tmdb = require('./searchTMDB.js');
 let Print = require('./print.js');
+let fbData = require('./fbData.js');
 
 
 function addCardListeners(){
-	$(".card-fixed").click(function(){
+	$(".card").click(function(){
 		let target = event.currentTarget;
 		if ($(target).hasClass("loaded")){
 			return;
@@ -18,4 +19,14 @@ function addCardListeners(){
 		}
 	});
 }
-module.exports = {addCardListeners};
+
+function addButtonListeners(){
+	$(".add-movie").click(function(){
+		console.log("add-movie");
+		fbData.makeObj();
+	});
+}
+
+
+
+module.exports = {addCardListeners, addButtonListeners};
