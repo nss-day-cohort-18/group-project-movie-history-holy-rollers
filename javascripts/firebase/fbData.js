@@ -43,9 +43,7 @@ fbData.getUserData = function (userID)
             url: `https://netflixorchill-ea086.firebaseio.com/results.json?orderBy="uid"&equalTo="${userID}"`
         })
         .done( (userData) => {
-
-                console.log('firebase request:',userData);
-                resolve(userData);
+            resolve(userData);
         });
     });
 };

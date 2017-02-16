@@ -81,16 +81,14 @@ $("#title-search").on("keyup", (event) => {
 			//begin firebase user stuff
 			let currentUser = user.getUser();
 			fbData.getUserData(currentUser)
-			.then( Print.tmdbPrint );
-
-			// crossCheck(currentUser);
-
+			.then( (data) => {
+				Print.filterPage(data);
+				let resultsObj = {results:data};
+				Print.tmdbPrint(resultsObj);
+			});
 		});
 	}
 });
-
-
-
 
 
 
