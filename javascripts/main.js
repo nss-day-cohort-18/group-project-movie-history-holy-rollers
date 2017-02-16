@@ -80,16 +80,15 @@ $("#title-search").on("keyup", (event) => {
 			let currentUser = user.getUser();
 			fbData.getUserData(currentUser)
 			.then( (data) => {
-				Print.tmdbPrint(data);
+				Print.filterPage(data);
+				let resultsObj = {results:data};
+				Print.tmdbPrint(resultsObj);
 			});
 			// crossCheck(currentUser);
 
 		});
 	}
 });
-
-
-
 
 
 
