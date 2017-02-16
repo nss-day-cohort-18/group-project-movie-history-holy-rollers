@@ -22,7 +22,7 @@ fbData.makeObj = function(){
 fbData.addMovie = function(Obj) {
     return new Promise(function(resolve, reject){
         $.ajax({
-            url: 'https://netflixorchill-ea086.firebaseio.com/movies.json',
+            url: 'https://netflixorchill-ea086.firebaseio.com/results.json',
             type: 'POST',
             data: JSON.stringify(Obj),
             dataType: 'json'
@@ -32,5 +32,22 @@ fbData.addMovie = function(Obj) {
     });
 };
 
+fbData.getUserData = function (userID)
+{
+    return new Promise(
+    function(resolve, reject)
+    {
+        $.ajax(
+        {
+            url: `https://netflixorchill-ea086.firebaseio.com/results.json?orderBy="uid"&equalTo="${userID}"`
+        })
+        .done( (userData) => {
+            console.log('firebase request:',userData);
+            let resultsObj = {results:userData};
+            console.log(resultsObj);
+            resolve(resultsObj);
+        });
+    });
+};
 
 module.exports = fbData;
