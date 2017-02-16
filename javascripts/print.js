@@ -21,7 +21,14 @@ Print.actorsPrint = function(data, id){
 	console.log($("#actor-reveal-"+id));
 };
 
-
+Print.filterPage = function(data){
+	for (var x in data){
+		if(true){
+			var movieID = data[x].id;
+			$(".card-fixed[id='"+movieID+"']").remove();
+		}
+	}
+};
 
 
 module.exports = Print;
