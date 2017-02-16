@@ -22,8 +22,8 @@ function addCardListeners(){
 
 function addButtonListeners(){
 	$(".add-movie").click(function(){
-		console.log("add-movie");
-		fbData.makeObj();
+		let movieObj = fbData.makeObj();
+		fbData.addMovie(movieObj);
 	});
 }
 
