@@ -12,17 +12,6 @@ let 	key = 'ef211d0a57225ce857a7822b3a8ed69f',
 //Functions
 //*********
 
-//Getter and setter for when our object properties are private
-Tmdb.set = function(property, value)
-{
-	this.property = value;
-};
-
-Tmdb.get = function(property)
-{
-	return this.property;
-};
-
 //Get input value from Search bar and send the search string
 //to Tmdb
 Tmdb.searchTMDB = function(){
@@ -32,6 +21,7 @@ Tmdb.searchTMDB = function(){
 			method: 'GET',
 			url: `https://api.themoviedb.org/3/search/movie?query=${titleSearch}&api_key=${key}`
 		}).done( (data) => {
+			console.log(data);
 			resolve(data);
 		});
 	});
@@ -54,6 +44,5 @@ Tmdb.findTMDB = function(){
 };
 
 
-
-
 module.exports = Tmdb;
+

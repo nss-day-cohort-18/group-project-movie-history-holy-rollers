@@ -18,6 +18,7 @@ let Events = require('./events.js');
 let user = require("./firebase/user.js");
 let crossCheck = require("./crossCheckData.js");
 let fbData = require('./firebase/fbData.js');
+let deleteCard = require('./deleteCard.js');
 
 
 
@@ -73,8 +74,10 @@ $("#title-search").on("keyup", (event) => {
 	{
 		Tmdb.searchTMDB().then(function(data){
 			$("#title-search").val("");//1.clear user's input from field
-			Print.tmdbClear();//2.clear display field of results from a previous search
-			Print.tmdbPrint(data); //3.Run search results through handlebars and print formatted results to screen
+			Print.tmdbClear();		   //2.clear display field of results
+									   //from a previous search
+			Print.tmdbPrint(data); 	   //3.Run search results through
+									   //handlebars and print formatted results to screen
 			Events.addCardListeners();
 			Events.addButtonListeners();
 
@@ -82,16 +85,20 @@ $("#title-search").on("keyup", (event) => {
 			let currentUser = user.getUser();
 			fbData.getUserData(currentUser)
 			.then( (data) => {
-				// Print.filterPage(data);
+				console.log(data);
+				Print.filterPage(data);
 				let resultsObj = {results:data};
 				Print.tmdbPrint(resultsObj);
+			}).then( () => {
+				var deleteButtons = $('.delete-movie');
+				for (var i = 0; i < deleteButtons.length; i++)
+				{
+					deleteButtons[i].addEventListener('click', deleteCard);
+				}
 			});
 		});
 	}
 });
-
-
-
 
 /////////// FILTER EVENT LISTENERS ////////////
 $("#showUntrackedBtn").click(function (){
@@ -109,5 +116,3 @@ $("#showWatchedBtn").click(function (){
 $("#favoritesBtn").click(function (){
 	console.log("favoritesBtn",this);
 });
-
-//

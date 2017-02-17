@@ -27,7 +27,6 @@ Print.filterPage = function(data){
 		$(".card-fixed[id='"+movieID+"']").remove();
 		var newData = data[x];
 		data[x].uglyID = newData;
-
 	}
 	return data;
 };

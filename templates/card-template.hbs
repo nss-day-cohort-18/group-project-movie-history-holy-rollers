@@ -2,9 +2,10 @@
   <div id="{{id}}" class="col s4 card-fixed">
 	<div id="{{id}}" class="card hoverable">
 	  <div class="card-image waves-effect waves-block waves-light">
-	  	<a class="btn-floating halfway-fab waves-effect waves-light red">
 	  	{{#if uid}}
-	  	<i id="{{uglyID}}" class="material-icons">delete</i></a>
+	  	<a class="btn-floating halfway-fab waves-effect waves-light red">
+	  	<i id="delete-{{id}}" class="material-icons delete-movie">delete</i>
+	  	</a>
 	  	{{/if}}
 	    <img class="activator" src="https://image.tmdb.org/t/p/w500{{poster_path}}">
 	  </div>
