@@ -32,8 +32,9 @@ function deleteCard(event) {
 		console.log(userMovies);
 		for (var movie in userMovies)
 		{
-			console.log('in the loop',movie,movie.id,prettyID);
-			if (movie.id == prettyID)
+			// console.log('movie type:',typeof movie, 'prettyID type:',typeof prettyID);
+			// console.log('in the loop',movie,userMovies[movie],prettyID);
+			if (userMovies[movie].id == prettyID)
 			{
 				console.log('in the conditional');
 				var uglyID = movie;
@@ -41,7 +42,7 @@ function deleteCard(event) {
 				$.ajax(
 				{
 					method: 'DELETE',
-					url: `https://netflixorchill-ea086.firebaseio.com/results.json/${uglyID}`
+					url: `https://netflixorchill-ea086.firebaseio.com/results/${uglyID}.json`
 				});
 			}
 		}
