@@ -23,11 +23,13 @@ Print.actorsPrint = function(data, id){
 
 Print.filterPage = function(data){
 	for (var x in data){
-		if(true){
-			var movieID = data[x].id;
-			$(".card-fixed[id='"+movieID+"']").remove();
-		}
+		var movieID = data[x].id;
+		$(".card-fixed[id='"+movieID+"']").remove();
+		var newData = data[x];
+		data[x].uglyID = newData;
+
 	}
+	return data;
 };
 
 

@@ -51,7 +51,6 @@ Tmdb.findTMDB = function(){
 			console.log(tempObj);
 		});
 	});
-	
 };
 
 

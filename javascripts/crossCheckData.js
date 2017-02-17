@@ -1,13 +1,13 @@
 // "use strict";
 
 
-// function crossCheck(userID) {
+// function crossCheck(userID, data) {
 // 	var isUserMovie = [];
 
 
-// 	for(var i = 0; i < tmdbData.tmdbData.results.length; i++)
+// 	for(var i = 0; i < data.results.length; i++)
 // 	{
-// 		if (tmdbData.results[i].id === userData.uid)
+// 		if (tmdbData.results[i].id == userData.uid)
 // 		{
 // 			 isUserMovie.push(true);
 // 		}

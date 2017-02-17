@@ -72,9 +72,9 @@ $("#title-search").on("keyup", (event) => {
 	if(event.which === 13)
 	{
 		Tmdb.searchTMDB().then(function(data){
-			$("#title-search").val("");
-			Print.tmdbClear();
-			Print.tmdbPrint(data);
+			$("#title-search").val("");//1.clear user's input from field
+			Print.tmdbClear();//2.clear display field of results from a previous search
+			Print.tmdbPrint(data); //3.Run search results through handlebars and print formatted results to screen
 			Events.addCardListeners();
 			Events.addButtonListeners();
 
@@ -82,7 +82,7 @@ $("#title-search").on("keyup", (event) => {
 			let currentUser = user.getUser();
 			fbData.getUserData(currentUser)
 			.then( (data) => {
-				Print.filterPage(data);
+				// Print.filterPage(data);
 				let resultsObj = {results:data};
 				Print.tmdbPrint(resultsObj);
 			});
